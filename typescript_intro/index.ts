@@ -1,14 +1,19 @@
-console.log("Hola mundo");
-
-
-async function esPuta(){
-    try{
-        await fetch("https://").then(res => res.json());
-    }
-    catch(Error){
-        console.log(Error);
-        return;
-    }
+interface weekDays {
+    firstDay: string,
+    secondDay : string,
+    thirdDay : string,
+    fourthDay : string,
+    fifthDay : string
 }
 
-esPuta();
+let Days: weekDays = {
+    firstDay: "Monday",
+    secondDay : "Thuesday",
+    thirdDay : "Wendnesday",
+    fourthDay : "Thursday",
+    fifthDay : "Friday"
+}
+
+for(let day in Days){
+    console.log(Days[day])
+}
