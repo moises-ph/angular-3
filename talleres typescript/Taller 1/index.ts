@@ -1,28 +1,28 @@
-//++++++++++++++++++ 1. Declare e inicie. +++++++++++++++++++++++++++//
+//*++++++++++++++++++ 1. Declare e inicie. +++++++++++++++++++++++++++*//
 
-let varLog1 : Boolean = true;
-let varLog2 : Boolean = false;
+let varLog1 : boolean = true;
+let varLog2 : boolean = false;
 
-let varNum1 : Number = 1;
-let varNum2 : Number = 400;
+let varNum1 : number = 1;
+let varNum2 : number = 400;
 
 let varAny1 : any = "any";
 let varAny2 : any = 417;
 
-let varStr1 : String = "String 1";
-let varStr2 : String = "String 2";
+let varStr1 : string = "String 1";
+let varStr2 : string = "String 2";
 
 
 // Template String
 
-let nombre:String = 'Moises';
-let apellido:String  = 'Pineda'
-let welcome: String = `Bienvenido/a ${nombre} ${apellido} a nuestro sitio web, gracias por registrarte`;
+let nombre:string = 'Moises';
+let apellido:string  = 'Pineda'
+let welcome: string = `Bienvenido/a ${nombre} ${apellido} a nuestro sitio web, gracias por registrarte`;
 
 console.log(welcome);
 
 
-//++++++++++++++ 2.Declare e inicie (Arreglos) +++++++++++++++++++++//
+//*++++++++++++++ 2.Declare e inicie (Arreglos) +++++++++++++++++++++*//
 let numArray:Array<number> = [1,2,3,4,5];
 console.log(numArray);
 
@@ -34,48 +34,47 @@ for(let element of numArray){
     console.log(`Numeros #${element}: ${numArray[element-1]}`);
 }
 
-//++++++++++++++++ Ejemplos CRUD en Arreglos +++++++++++++++++//
+//*++++++++++++++++ Ejemplos CRUD en Arreglos +++++++++++++++++*//
 
-// Por optimización se usará un arreglo para todos los ejemplos //
+//* Por optimización se usará un arreglo para todos los ejemplos //
 let Animales: Array<string> =["León", "Jirafa", "Elefante", "Mono"];
 console.log(Animales);
 
 
-// Supongamos que llega un nuevo animal al zoologico, pues usamos el método Array.push() para añadir un nuevo elemento al final del arreglo 
-// de esta manera
+//* Supongamos que llega un nuevo animal al zoologico, pues usamos el método Array.push() para añadir un nuevo elemento al final del arreglo 
+//* de esta manera
 
-Animales.push("Gorila"); // De este modo Animales quedaría ["León", "Jirafa", "Elefante", "Mono", "Gorila"]
+Animales.push("Gorila"); //* De este modo Animales quedaría ["León", "Jirafa", "Elefante", "Mono", "Gorila"]
 console.log(Animales);
 
-// Para leer un elemento de un arreglo hay varias maneras, mostraré dos maneras: una para mostrar x elemento
-// de un arreglo con console.log() y la otra para recorrerla con el método Array.map() que es más práctico y muy útil; la manera del for of
-// está arriba en el ejercicio de inicialización de arreglos
+//* Para leer un elemento de un arreglo hay varias maneras, mostraré dos maneras: una para mostrar x elemento
+//* de un arreglo con console.log() y la otra para recorrerla con el método Array.map() que es más práctico y muy útil; la manera del for of
+//* está arriba en el ejercicio de inicialización de arreglos
 
-// Para cualquier situación fuera de Array.map(), Array.filter(), Array.find(), etc. Métodos donde no se use el index sino un callback 
-// para trabajar sobre el elemento como un valor fuera del arreglo se usa la siguiente sintáxis
-// Array[indice del elemento : Int] así
+//* Para cualquier situación fuera de Array.map(), Array.filter(), Array.find(), etc. Métodos donde no se use el index sino un callback 
+//* para trabajar sobre el elemento como un valor fuera del arreglo se usa la siguiente sintáxis
+//* Array[indice del elemento : Int] así
 
 console.log(Animales[0]); // Hay que tener en cuenta que los valores dentro de un arreglo se empieza a contar desde 0
-// El valor que mostrará es "León"
+//* El valor que mostrará es "León"
 
-// Para el Array.map() se le pasa una función o callback para leer los elementos, en este caso usaré una función de flecha
+//* Para el Array.map() se le pasa una función o callback para leer los elementos, en este caso usaré una función de flecha
 
 Animales.map(element => {
     console.log(element);
-}); // La salida esperada es exactamente la misma que el ciclo for, pero en este caso solo usamos una función en vez de un contador
+}); //* La salida esperada es exactamente la misma que el ciclo for, pero en este caso solo usamos una función en vez de un contador
 
 
-// Para actualzar un elemento del Arreglo tan solo vamos al índice y le asiganmos un nuevo valor así
+//* Para actualzar un elemento del Arreglo tan solo vamos al índice y le asiganmos un nuevo valor así
 
 Animales[2] = "";
 
-// Para eliminar un elemento del Arreglo
+//* Para eliminar un elemento del Arreglo
 
-Animales.shift(); // elimina el primero elemento del arreglo
-Animales.pop(); // elimina el ultimo elemento del arreglo
+delete Animales[2];
 
 
-//++++++++++++++++++++++++++++++++ Objetos ++++++++++++++++++++++++++++++++++//
+//*++++++++++++++++++++++++++++++++ Objetos ++++++++++++++++++++++++++++++++++*//
 
 let weekDays = {
     firstDay: "Monday",
@@ -108,13 +107,44 @@ for(let number in numbers){
     console.log(`#${number}: ${numbers[number]}`)
 };
 
-// cómo eliminar elementos clave-valor de un objeto, cómo leer y actualizar valores. 
+//* cómo eliminar elementos clave-valor de un objeto, cómo leer y actualizar valores. 
 
-// Eliminar clave-valor
+//* Eliminar clave-valor
 
 delete numbers.nine;
 console.log(numbers);
 
 
-// Ciclo while
-// El ciclo 
+//* Ciclo while
+//* El ciclo while usa un condicional que cuando sea true ejecute el código que está entre las llaves {}, javascript evaluará primero la condición y dependiendo si es
+//* true o false ejecutará o no el codigo, luego de terminar la ejecución reevaluará la condición, en caso de ser false continuará con el código siguiente
+
+//* Mostrar la sucesión de fibonacci con un ciclo while, los primeros 10 números
+
+let x: number = 0;
+let num1: number = 1;
+let num2: number = 0;
+let resultado: number = 0;
+while(x < 10){
+    console.log(num1);
+    resultado = num1 + num2;
+    num2 = num1;
+    num1 = resultado;
+    x++;
+}
+
+//* * * Ciclo For
+// * El ciclo for tiene la siguiente sintaxis ([variable de control: Int], [condición], [cambio en la variable])
+// * El ciclo for ejecutará el código entre llaves {} cada que la condición sea verdadera (true)
+
+//* Veamos la suseción de fibonacci en un ciclo For */
+
+
+let numero1: number = 1;
+let numero2: number = 0;
+for(let i: number = 0; i < 10 ; i++){
+    console.log(numero1);
+    resultado = numero1 + numero2;
+    numero2 = numero1;
+    numero1 = resultado;
+}
