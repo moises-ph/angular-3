@@ -43,3 +43,42 @@ Animales.map(element => {
 }); // La salida esperada es exactamente la misma que el ciclo for, pero en este caso solo usamos una función en vez de un contador
 // Para actualzar un elemento del Arreglo tan solo vamos al índice y le asiganmos un nuevo valor así
 Animales[2] = "";
+// Para eliminar un elemento del Arreglo
+Animales.shift(); // elimina el primero elemento del arreglo
+Animales.pop(); // elimina el ultimo elemento del arreglo
+//++++++++++++++++++++++++++++++++ Objetos ++++++++++++++++++++++++++++++++++//
+let weekDays = {
+    firstDay: "Monday",
+    secondDay: "Thuesday",
+    thirdDay: "Wednesday",
+    fourthDay: "Thursday",
+    fifthDay: "Friday",
+    sixthDay: "Saturday",
+    seventhDay: "Sunday"
+};
+let numbers = {
+    cero: 0,
+    one: 1,
+    two: 2,
+    three: 3,
+    four: 4,
+    five: 5,
+    six: 6,
+    seven: 7,
+    eight: 8,
+    nine: 9
+};
+for (let days in weekDays) {
+    console.log(`${days}: ${weekDays[days]}`);
+}
+;
+for (let number in numbers) {
+    console.log(`#${number}: ${numbers[number]}`);
+}
+;
+// cómo eliminar elementos clave-valor de un objeto, cómo leer y actualizar valores. 
+// Eliminar clave-valor
+delete numbers.nine;
+console.log(numbers);
+// Ciclo while
+// El ciclo 

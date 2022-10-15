@@ -15,18 +15,18 @@ let varStr2 : String = "String 2";
 
 // Template String
 
-let nombre = 'Moises';
-let apellido = 'Pineda'
+let nombre:String = 'Moises';
+let apellido:String  = 'Pineda'
 let welcome: String = `Bienvenido/a ${nombre} ${apellido} a nuestro sitio web, gracias por registrarte`;
 
 console.log(welcome);
 
 
 //++++++++++++++ 2.Declare e inicie (Arreglos) +++++++++++++++++++++//
-let numArray = [1,2,3,4,5];
+let numArray:Array<number> = [1,2,3,4,5];
 console.log(numArray);
 
-let strArray = ["String", "Otro String", "Cadena pa variar", "Otra Cadena", "Mucho Char"];
+let strArray: Array<string> = ["String", "Otro String", "Cadena pa variar", "Otra Cadena", "Mucho Char"];
 console.log(strArray);
 
 for(let element of numArray){
@@ -37,7 +37,7 @@ for(let element of numArray){
 //++++++++++++++++ Ejemplos CRUD en Arreglos +++++++++++++++++//
 
 // Por optimización se usará un arreglo para todos los ejemplos //
-let Animales =["León", "Jirafa", "Elefante", "Mono"];
+let Animales: Array<string> =["León", "Jirafa", "Elefante", "Mono"];
 console.log(Animales);
 
 
@@ -68,3 +68,53 @@ Animales.map(element => {
 // Para actualzar un elemento del Arreglo tan solo vamos al índice y le asiganmos un nuevo valor así
 
 Animales[2] = "";
+
+// Para eliminar un elemento del Arreglo
+
+Animales.shift(); // elimina el primero elemento del arreglo
+Animales.pop(); // elimina el ultimo elemento del arreglo
+
+
+//++++++++++++++++++++++++++++++++ Objetos ++++++++++++++++++++++++++++++++++//
+
+let weekDays = {
+    firstDay: "Monday",
+    secondDay: "Thuesday",
+    thirdDay: "Wednesday",
+    fourthDay: "Thursday",
+    fifthDay: "Friday",
+    sixthDay: "Saturday",
+    seventhDay: "Sunday"
+};
+
+let numbers = {
+    cero:0,
+    one:1,
+    two:2,
+    three:3,
+    four:4,
+    five:5,
+    six:6,
+    seven:7,
+    eight:8,
+    nine:9
+}
+
+for(let days in weekDays){
+    console.log(`${days}: ${weekDays[days]}`)
+};
+
+for(let number in numbers){
+    console.log(`#${number}: ${numbers[number]}`)
+};
+
+// cómo eliminar elementos clave-valor de un objeto, cómo leer y actualizar valores. 
+
+// Eliminar clave-valor
+
+delete numbers.nine;
+console.log(numbers);
+
+
+// Ciclo while
+// El ciclo 
