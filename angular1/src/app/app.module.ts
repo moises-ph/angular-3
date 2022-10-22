@@ -4,21 +4,27 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { Comp1Component } from './components/comp1/comp1.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { UsuariosService }  from './services/usuarios.service';
+import { HttpClientModule } from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    Comp1Component,
+    NavBarComponent,
+    UsuariosComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UsuariosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
